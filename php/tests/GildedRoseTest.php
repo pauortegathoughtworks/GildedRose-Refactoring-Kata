@@ -45,7 +45,7 @@ class GildedRoseTest extends TestCase
 
     public function testFoo(): void
     {
-        $file = file_get_contents('/usr/src/myapp/tests/approvals/ApprovalTest.testTestFixture.approved.txt');
+        $file = file_get_contents('/usr/src/gilded-rose-php/tests/approvals/ApprovalTest.testTestFixture.approved.txt');
         $fileByLines = explode(PHP_EOL, $file);
 
         $gildedRose = new GildedRose($this->initialItems);

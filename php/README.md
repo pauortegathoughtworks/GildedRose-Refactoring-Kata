@@ -7,24 +7,44 @@ GildedRose Kata.
 
 The kata uses:
 
+- [Docker](https://docs.docker.com/get-docker/)
+
+Alternatively,
+
 - [PHP 7.3 or 7.4 or 8.0+](https://www.php.net/downloads.php)
 - [Composer](https://getcomposer.org)
 
-Recommended:
+Recommended in either case:
 
 - [Git](https://git-scm.com/downloads)
 
 Clone the repository
 
 ```sh
-git clone git@github.com:emilybache/GildedRose-Refactoring-Kata.git
+git clone git@github.com:pauortegathoughtworks/GildedRose-Refactoring-Kata.git
 ```
 
 or
 
 ```shell script
-git clone https://github.com/emilybache/GildedRose-Refactoring-Kata.git
+git clone https://github.com/pauortegathoughtworks/GildedRose-Refactoring-Kata.git
 ```
+
+### If you use Docker
+
+```shell script
+docker build -t gilded-rose-php .
+docker run -it -v `pwd`:/usr/src/gilded-rose-php gilded-rose-php bash
+```
+
+Then once inside the container
+
+```shell script
+composer install
+```
+
+
+### If you use PHP 7.3, 7.4 or 8.0+ natively
 
 Install all the dependencies using composer
 
@@ -58,14 +78,14 @@ The project uses composer to install:
 
 ## Testing
 
-PHPUnit is configured for testing, a composer script has been provided. To run the unit tests, from the root of the PHP
-project run:
+PHPUnit is configured for testing, a composer script has been provided. To run the unit tests, from inside of the Docker image (or, if you don't use Docker, the root of the PHP
+project) run:
 
 ```shell script
 composer test
 ```
 
-A Windows a batch file has been created, like an alias on Linux/Mac (e.g. `alias pu="composer test"`), the same
+A Windows batch file has been created, like an alias on Linux/Mac (e.g. `alias pu="composer test"`), the same
 PHPUnit `composer test` can be run:
 
 ```shell script
